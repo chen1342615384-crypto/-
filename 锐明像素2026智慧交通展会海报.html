@@ -49,7 +49,9 @@
     background:var(--paper);color:var(--ink);
     font-family:var(--sans),var(--sans-zh);
     font-feature-settings:"ss01","cv11";
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    touch-action:none;-ms-touch-action:none;
+    overscroll-behavior:none;
   }
 
   canvas.bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;opacity:.55;mix-blend-mode:multiply;pointer-events:none}
@@ -404,19 +406,26 @@
       <div class="r">2026 · 粤港澳大湾区</div>
     </div>
 
-    <div style="flex:1;padding:0;display:grid;grid-template-rows:auto 1fr auto;gap:2.6vh">
-      <div data-anim="kicker" class="t-meta" style="color:rgba(255,255,255,.78);letter-spacing:.22em">EXHIBITION · 2026</div>
+    <div style="flex:1;padding:0;display:grid;grid-template-rows:1fr auto auto 1fr;gap:0;align-items:center">
 
-      <h1 data-anim="title" style="align-self:center;font-family:var(--sans),var(--sans-zh);font-weight:400;font-size:min(10vw,17vh);line-height:.94;letter-spacing:-.025em;color:#fff">
-        数智赋能交通<br/>共创<span style="font-style:italic;font-weight:500">湾区</span>未来
-      </h1>
+      <div style="display:flex;align-items:flex-end">
+        <h1 data-anim="title" style="font-family:var(--sans),var(--sans-zh);font-weight:400;font-size:min(10vw,17vh);line-height:1.2;letter-spacing:-.025em;color:#fff">
+          数智赋能交通<br/>&nbsp;&nbsp;&nbsp;&nbsp;共创<span style="font-style:italic;font-weight:500">湾区</span>未来
+        </h1>
+      </div>
 
-      <div data-anim="bottom" style="display:grid;grid-template-rows:auto auto;gap:1.6vh;border-top:1px solid rgba(255,255,255,.22);padding-top:2vh">
-        <div data-anim="lead" class="lead" style="max-width:52ch;color:rgba(255,255,255,.86)">AI问道 · 像素巡城</div>
-        <div style="display:flex;justify-content:space-between;align-items:end">
-          <div class="t-meta" style="color:rgba(255,255,255,.6)">2026.06.24 — 06.26</div>
-          <div class="t-meta" style="color:rgba(255,255,255,.6)">↓ swipe / arrow keys</div>
-        </div>
+      <!-- 展会信息 -->
+      <div data-anim="kicker" style="display:flex;flex-direction:column;gap:2vh;padding:3vh 0">
+        <div style="color:rgba(255,255,255,.82);letter-spacing:.08em;font-size:24px;font-weight:400">2026粤港澳大湾区智慧交通科技创新大会暨成果展</div>
+        <div style="color:rgba(255,255,255,.6);font-size:20px;font-weight:300">2026.06.24 — 06.26</div>
+        <div style="color:rgba(255,255,255,.6);font-size:20px;font-weight:300">广州·保利世贸博览馆（海珠区新港东路1000号）</div>
+        <div style="color:rgba(255,255,255,.6);font-size:20px;font-weight:300">1号馆 T26展位</div>
+      </div>
+
+      <div></div>
+
+      <div data-anim="lead" style="display:flex;justify-content:flex-end;align-items:end;padding-bottom:0">
+        <div class="lead" style="color:rgba(255,255,255,.86)">AI问道 · 像素巡城</div>
       </div>
     </div>
   </div>
@@ -426,45 +435,43 @@
 <section class="slide" data-animate="grid-reveal">
   <div class="canvas-card">
     <div class="chrome-min">
-      <div class="l">关于锐明像素 · ABOUT US</div>
+      <div class="l">STREAMAP · 锐明像素</div>
       <div class="r">02 / 04</div>
     </div>
 
-    <div style="flex:1;padding:0;display:grid;grid-template-rows:auto 1fr auto;gap:2.4vh">
+    <div style="flex:1;padding:0;display:grid;grid-template-rows:auto 1fr;gap:2.4vh">
       <div data-anim="head" style="display:flex;flex-direction:column;gap:1.4vh">
-        <div class="t-meta">STREAMAP · 锐明像素</div>
-        <h2 class="h-xl-zh" style="font-size:min(4.6vw,8.2vh)">AI 智慧路网巡检<br/><span style="color:var(--accent)">全域数字化解决方案</span></h2>
+        <h2 class="h-xl-zh" style="font-size:min(4.6vw,8.2vh);font-weight:500">AI 智慧巡检<br/><span style="color:var(--accent)">全域数字化解决方案</span></h2>
       </div>
 
       <div data-anim="grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2vh 3vw;align-content:start">
         <!-- 企业背景 · 整行 -->
         <div style="grid-column:1/-1;padding:1.8vh 0;border-top:2px solid var(--accent)">
-          <div class="t-meta" style="margin-bottom:1vh">企业背景</div>
+          <div class="t-meta" style="margin-bottom:1vh;font-size:18px">企业背景</div>
           <p class="body-sm" style="opacity:.86;line-height:1.7">锐明技术于2020年分拆公路数字化业务设立专业子公司锐明像素，签约全国100万台商用车视频大数据，构建道路领域AI大模型问道；并推出全球首支专业巡查黑光相机，可广泛适应夜间巡查、隧道巡查等多种低照度场景，精准识别道路与设施病害以及交通安全事件。</p>
         </div>
         <!-- 核心实力 -->
         <div style="padding:1.2vh 0;border-top:2px solid var(--accent)">
-          <div class="t-meta" style="margin-bottom:.6vh">核心实力</div>
+          <div class="t-meta" style="margin-bottom:.6vh;font-size:18px">核心实力</div>
           <p class="body-sm" style="opacity:.86">获得30余项国家发明专利及60余项软件成果。落地全国<span style="color:var(--accent);font-weight:600">12个省市自治区</span>，并应用在全球多个国家和地区。</p>
         </div>
         <!-- 技术底座 -->
         <div style="padding:1.2vh 0;border-top:2px solid var(--accent)">
-          <div class="t-meta" style="margin-bottom:.6vh">技术底座</div>
+          <div class="t-meta" style="margin-bottom:.6vh;font-size:18px">技术底座</div>
           <p class="body-sm" style="opacity:.86">签约 <span style="color:var(--accent);font-weight:600">100 万台</span>商用车视频大数据，自研「问道」道路专属 AI 大模型</p>
         </div>
         <!-- 算法能力 -->
         <div style="padding:1.2vh 0;border-top:2px solid var(--accent)">
-          <div class="t-meta" style="margin-bottom:.6vh">算法能力</div>
+          <div class="t-meta" style="margin-bottom:.6vh;font-size:18px">算法能力</div>
           <p class="body-sm" style="opacity:.86">公路 6 大类 <span style="color:var(--accent);font-weight:600">380 项</span>识别算法</p>
         </div>
         <!-- 硬件产品 -->
         <div style="padding:1.2vh 0;border-top:2px solid var(--accent)">
-          <div class="t-meta" style="margin-bottom:.6vh">硬件产品</div>
+          <div class="t-meta" style="margin-bottom:.6vh;font-size:18px">硬件产品</div>
           <p class="body-sm" style="opacity:.86">全球首支专业巡查黑光相机，可广泛适应夜间巡查、隧道巡查等多种低照度场景，精准识别道路与设施病害以及交通安全事件。</p>
         </div>
       </div>
 
-      <div data-anim="foot" class="t-meta">AI 赋能智慧管养 · 打造全域数字化路网新生态</div>
     </div>
   </div>
 </section>
@@ -487,8 +494,8 @@
             共探<span style="font-style:italic;font-weight:300">机遇</span>
           </h2>
           <div style="font-family:var(--sans),var(--sans-zh);font-size:max(14px,.9vw);line-height:1.4;color:rgba(255,255,255,.62);font-weight:400;margin-top:.6vh">1号馆，T26展位</div>
-          <div style="font-family:var(--sans),var(--sans-zh);font-size:max(16px,1.1vw);line-height:1.6;color:rgba(255,255,255,.82);font-weight:400;max-width:36ch;margin-top:1.4vh">
-            诚邀行业同仁、合作伙伴莅临1号馆，T26展位观摩交流、共探机遇
+          <div style="font-family:var(--sans),var(--sans-zh);font-size:max(15px,1vw);line-height:1.6;color:rgba(255,255,255,.82);font-weight:400;margin-top:1.4vh">
+            诚邀行业同仁、合作伙伴莅临【1号馆  T26展位】观摩交流、共探机遇
           </div>
         </div>
 
@@ -550,13 +557,13 @@
       <h1 data-anim="title" style="align-self:center;font-family:var(--sans),var(--sans-zh);font-weight:200;font-size:min(10vw,17vh);line-height:.92;letter-spacing:-.025em;color:#fff;text-align:center">
         静待<span style="font-style:italic;font-weight:300">莅临</span>
       </h1>
-      <div data-anim="title" style="text-align:center;font-family:var(--sans),var(--sans-zh);font-size:max(18px,1.8vw);font-weight:300;color:rgba(255,255,255,.72);letter-spacing:.06em;margin-top:-1vh">1号馆，T26展位</div>
+      <div data-anim="title" style="text-align:center;font-family:var(--sans),var(--sans-zh);font-size:24px;font-weight:500;color:rgba(255,255,255,.72);letter-spacing:.06em;margin-top:-4vh">1号馆 T26展位</div>
 
       <div data-anim="bottom" style="display:grid;grid-template-rows:auto auto;gap:1.6vh;border-top:1px solid rgba(255,255,255,.22);padding-top:2vh">
         <div style="display:flex;justify-content:center;gap:4vw;flex-wrap:wrap">
           <div style="text-align:center">
             <div class="t-meta" style="color:rgba(255,255,255,.6);margin-bottom:.6vh">DATE</div>
-            <div class="closing-date" style="font-family:var(--sans);font-weight:200;font-size:min(4vw,7vh);color:#fff;letter-spacing:-.02em">2026.06.24—26</div>
+            <div class="closing-date" style="font-family:var(--sans);font-weight:400;font-size:min(4vw,7vh);color:#fff;letter-spacing:-.02em">2026.06.24—26</div>
           </div>
           <div style="text-align:center">
             <div class="t-meta" style="color:rgba(255,255,255,.6);margin-bottom:.6vh">VENUE</div>
@@ -601,7 +608,7 @@ function go(n){
   const isDark = el.classList.contains('dark') || el.classList.contains('accent');
   document.body.classList.toggle('dark-bg', isDark);
   if(window.__playSlide) setTimeout(()=>window.__playSlide(idx), 450);
-  lock=true;setTimeout(()=>lock=false,700);
+  lock=true;setTimeout(()=>lock=false,500);
 }
 
 /* ESC 索引视图 */
@@ -645,11 +652,15 @@ addEventListener('keydown',e=>{
 });
 
 /* 触屏翻页 */
-let touchStartY=0;
+let touchStartY=0,touchLock=false;
 addEventListener('touchstart',e=>{touchStartY=e.touches[0].clientY},{passive:true});
 addEventListener('touchend',e=>{
+  if(touchLock)return;
   const dy=e.changedTouches[0].clientY-touchStartY;
-  if(Math.abs(dy)>50) dy<0?go(idx+1):go(idx-1);
+  if(Math.abs(dy)>30){
+    dy<0?go(idx+1):go(idx-1);
+    touchLock=true;setTimeout(()=>touchLock=false,500);
+  }
 },{passive:true});
 
 /* 滚轮翻页 */
